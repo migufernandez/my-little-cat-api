@@ -41,7 +41,13 @@ const cats = [
 ]
 
 app.get('/', function(req, res) {
-  res.send('Welcome to the cat api, meow.')
+  res.send(`<html>
+      <body>
+        <h1>CATS API, MEOW!</h1>
+      </body>
+      <hr/>
+      <a href="https://github.com/tripott/my-little-cat-api">Documentation</a>
+    </html>`)
 })
 
 app.get('/breeds', function(req, res) {
