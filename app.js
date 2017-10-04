@@ -70,8 +70,11 @@ app.get('/cats', function(req, res) {
 })
 
 app.get('/cats/:id', function(req, res) {
+  // const catID = req.params.id
+  // res.send('You hit the /cats/:id route. Coming soon. The cat id is: ' + catID)
   const catID = req.params.id
-  res.send('You hit the /cats/:id route. Coming soon. The cat id is: ' + catID)
+  const specificCat = cat => cat.id === catID
+  res.send(find(specificCat, database))
 })
 
 app.listen(4000, () => console.log('API is UP! MEOW! on port 4000'))
