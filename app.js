@@ -1,6 +1,9 @@
 const express = require('express')
 const app = express()
-const { filter, find } = require('ramda')
+const { filter, find, compose } = require('ramda')
+const typeFilter = type => item => item.type === type
+const breedFilter = typeFilter('breed')
+const catFilter = typeFilter('cat')
 
 const database = [
   { id: 'tabby', type: 'breed', desc: 'a great cat' },
