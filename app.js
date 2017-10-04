@@ -1,6 +1,6 @@
 const express = require('express')
 const app = express()
-const { filter } = require('ramda')
+const { filter, find } = require('ramda')
 
 const database = [
   { id: 'tabby', type: 'breed', desc: 'a great cat' },
@@ -60,9 +60,8 @@ app.get('/breeds', function(req, res) {
 
 app.get('/breeds/:id', function(req, res) {
   const breedID = req.params.id
-  res.send(
-    'You hit the /breeds/:id route. Coming soon. The breed id is: ' + breedID
-  )
+  const specificBreed = cat => cat.id === breedID
+  res.send(find(specificBreed, database))
 })
 
 app.get('/cats', function(req, res) {
