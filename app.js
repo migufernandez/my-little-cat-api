@@ -46,7 +46,7 @@ app.get('/', function(req, res) {
         <h1>CATS API, MEOW!</h1>
       </body>
       <hr/>
-      <a href="https://github.com/tripott/my-little-cat-api">Documentation</a>
+      <a href="https://github.com/migufernandez/my-little-cat-api.git">Documentation</a>
     </html>`)
 })
 
