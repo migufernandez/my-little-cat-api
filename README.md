@@ -20,20 +20,31 @@ $ node start
 
 returns and welcome message including a link to the repo and api documentation
 
-### Get all the cats - `/cats`
+## CATS
 
-retrieves a collection of cats.
+### Create a cat - `POST /cats`
+
+Adds a cat to a collection of cats. Requires a content header json
 
 ```
-GET /cats
+POST /cats
+
+'Content Type = 'application/json'
+
+{
+  id: 'felix',
+  type: 'cat',
+  name: 'felix',
+  breed: 'tabby',
+  owner: 'miguel',
+  age: 10
+}
+
 ```
 response 200
 
 ```
-[
-array of objects of all cats.
 
-]
 ```
 
 ### Get a cat - `/cats/{id}`
@@ -50,8 +61,59 @@ response 200
   object of felix
 }
 ```
+### Update a cat - `PUT /cats/{id}`
 
-### Get all the breeds - `/breeds`
+- TODO
+
+### Delete a cat - `DELETE /cats/{id}`
+
+- TODO
+
+### Get all the cats - `GET/cats`
+
+retrieves a collection of cats.
+
+```
+GET /cats
+```
+response 200
+
+```
+[
+array of objects of all cats.
+
+]
+```
+
+## BREEDS
+
+### Create a breed - `POST /breeds`
+
+- TODO
+
+### Get a breed - `GET /breeds/{id}`
+
+retrieves a single cat resource from the collection of breeds.
+
+```
+GET /breeds/tabby
+```
+response 200
+```
+{
+  object of tabby
+}
+```
+
+### Update a cat - `PUT /breeds/{id}`
+
+- TODO
+
+### Delete a cat - `DELETE /breeds/{id}`
+
+- TODO
+
+### List all the breeds - `/breeds`
 
 retrieves a collection of breeds.
 
@@ -64,18 +126,4 @@ respnse 200
 [
 array of breeds
 ]
-```
-
-### Get a breed - `/breeds/{id}`
-
-retrieves a single cat resource from the collection of breeds.
-
-```
-GET /breeds/tabby
-```
-response 200
-```
-{
-  object of tabby
-}
 ```

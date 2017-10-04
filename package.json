@@ -19,7 +19,9 @@
   },
   "homepage": "https://github.com/migufernandez/my-little-cat-api#readme",
   "dependencies": {
+    "body-parser": "^1.18.2",
     "express": "^4.16.1",
+    "node-http-error": "^2.0.0",
     "ramda": "^0.24.1"
   }
 }
