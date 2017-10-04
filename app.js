@@ -67,10 +67,10 @@ app.get('/breeds/:id', function(req, res) {
   res.send(find(specificBreed, database))
 })
 
-app.get('/cats', function(req, res) {
-  const catFilter = item => item.type === 'cat'
-  res.send(filter(catFilter, database))
-})
+app.get('/cats', (req, res) => res.send(filter(typeFilter('cat'), database)))
+//   const catFilter = item => item.type === 'cat'
+//   res.send(filter(catFilter, database))
+// })
 
 app.get('/cats/:id', function(req, res) {
   // const catID = req.params.id
